@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# Qualcomm Edge AI accelerator driver
+#
+
+config DRM_ACCEL_QNSP
+	tristate "Qualcomm Edge AI accelerator"
+	depends on DRM_ACCEL
+	depends on ARCH_QCOM
+	depends on RPMSG
+	help
+	  Enables DRM-based accelerator driver for Qualcomm's Hexagon DSPs.
+	  The driver enables user-space applications to offload tasks to
+	  the Hexagon DSPs (Digital Signal Processor) available on Qualcomm
+	  SoCs.
+
+	  The driver manages the Hexagon DSP subsystem and provides an IOCTL
+	  interface  for users to submit workloads to the devices.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called qnsp.
